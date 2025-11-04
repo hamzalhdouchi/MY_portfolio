@@ -1,144 +1,1535 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>Local index - HTTrack Website Copier</title>
-  <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<style type="text/css">
-	<!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Lhadouchi - Full Stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+        html {
+            scroll-behavior: smooth;
+        }
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-#siteNavigation .current { background-color: #ccd; }
+        /* Advanced Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
 
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, rgba(0, 217, 255, 0.1), rgba(168, 85, 247, 0.1));
+        }
 
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00d9ff, #a855f7);
+            border-radius: 6px;
+            border: 2px solid #000;
+        }
 
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #06b6d4, #9333ea);
+        }
 
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
 
+        .gradient-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #000, #001a1a, #1a0033, #000);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
 
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.8), transparent);
+            pointer-events: none;
+            opacity: 0.6;
+        }
 
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(90deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-40px) translateX(-10px) rotate(180deg);
+                opacity: 0.4;
+            }
+            75% {
+                transform: translateY(-20px) translateX(15px) rotate(270deg);
+                opacity: 0.7;
+            }
+        }
 
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+        /* Mesh Grid Background */
+        .mesh-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: meshMove 20s linear infinite;
+        }
 
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
+        @keyframes meshMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
 
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+        /* 3D Card Effects */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+        }
 
-// -->
-</style>
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0 #00d9ff, -2px -2px 0 #a855f7;
+                transform: translate(0);
+            }
+            25% {
+                text-shadow: -2px 2px 0 #00d9ff, 2px -2px 0 #a855f7;
+                transform: translate(-2px, 2px);
+            }
+            50% {
+                text-shadow: 2px -2px 0 #00d9ff, -2px 2px 0 #a855f7;
+                transform: translate(2px, -2px);
+            }
+            75% {
+                text-shadow: -2px -2px 0 #00d9ff, 2px 2px 0 #a855f7;
+                transform: translate(-2px, -2px);
+            }
+            100% {
+                text-shadow: 2px 2px 0 #00d9ff, -2px -2px 0 #a855f7;
+                transform: translate(0);
+            }
+        }
 
+        .glitch-text {
+            animation: glitch 3s infinite;
+        }
+
+        /* Typing Effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #00d9ff; }
+        }
+
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #00d9ff;
+            animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00d9ff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 3s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Neon Glow */
+        @keyframes neonGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(0, 217, 255, 0.5),
+                            0 0 20px rgba(0, 217, 255, 0.3),
+                            0 0 30px rgba(168, 85, 247, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 217, 255, 0.8),
+                            0 0 40px rgba(0, 217, 255, 0.5),
+                            0 0 60px rgba(168, 85, 247, 0.4);
+            }
+        }
+
+        .neon-border {
+            animation: neonGlow 2s ease-in-out infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Fade In Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 1s ease-out forwards;
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 1s ease-out forwards;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+
+        /* Stagger Delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d9ff, #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        /* Skill Bars */
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+        }
+
+        .skill-bar {
+            animation: fillBar 2s ease-out forwards;
+        }
+
+        /* Button Ripple Effect */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-ripple:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Rotating Border */
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotating-border {
+            position: relative;
+        }
+
+        .rotating-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(90deg, #00d9ff, #a855f7, #00d9ff);
+            border-radius: inherit;
+            animation: rotateBorder 3s linear infinite;
+            z-index: -1;
+        }
+
+        /* Profile Image Glow */
+        .profile-glow {
+            filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.6));
+            transition: filter 0.3s ease;
+        }
+
+        .profile-glow:hover {
+            filter: drop-shadow(0 0 50px rgba(0, 217, 255, 0.9));
+        }
+
+        /* Tech Stack Icons Float */
+        @keyframes iconFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        .icon-float {
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        /* Loading Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            border: 3px solid rgba(0, 217, 255, 0.1);
+            border-top: 3px solid #00d9ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Section Reveal */
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Cursor Trail */
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.6), transparent);
+            pointer-events: none;
+            z-index: 9999;
+            animation: cursorFade 1s ease-out forwards;
+        }
+
+        @keyframes cursorFade {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Font Sizes */
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+    </style>
 </head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-animation"></div>
+        <div class="mesh-grid"></div>
+        <div id="particles-container"></div>
+    </div>
 
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/30">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text font-['Orbitron']">
+                    HL<span class="text-xs align-super">DEV</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-cyan-400 active">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-cyan-400">Experience</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-cyan-400">Education</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-cyan-400 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-cyan-500/30">
+            <div class="flex flex-col py-4 px-6 space-y-3">
+                <a href="#home" class="text-gray-300 hover:text-cyan-400 py-2">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 py-2">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-cyan-400 py-2">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-cyan-400 py-2">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:text-cyan-400 py-2">Experience</a>
+                <a href="#education" class="text-gray-300 hover:text-cyan-400 py-2">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-cyan-400 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-	<meta name="generator" content="HTTrack Website Copier/3.x">
-	<TITLE>Local index - HTTrack</TITLE>
-</HEAD>
-<BODY>
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="gray-tailwind.flatheme.net/index-dark.html">
-						Gray - Tailwind Personal vCard/Portfolio Template
-					</A>		
-			</TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<BR>
-	<BR>
-  	<H6 ALIGN="RIGHT">
-	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO'2008]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=gray-tailwind.flatheme.net/index-dark.html">
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="scale-in">
+                <div class="w-48 h-48 mx-auto mb-8 rounded-full border-4 border-cyan-500 neon-border overflow-hidden profile-glow">
+                    <div class="w-full h-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
+                        <i class="fas fa-user-astronaut text-7xl text-cyan-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="hero-title font-['Orbitron'] font-bold mb-4 fade-in-up delay-100">
+                <span class="gradient-text">HAMZA LHADOUCHI</span>
+            </h1>
+            
+            <h2 class="text-3xl md:text-5xl font-semibold mb-6 fade-in-up delay-200">
+                <span class="text-cyan-400">Full Stack</span> 
+                <span class="text-purple-400">Developer</span>
+            </h2>
+            
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto fade-in-up delay-300">
+                Crafting innovative digital solutions with cutting-edge technologies
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-12 fade-in-up delay-400">
+                <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full font-semibold hover-lift btn-ripple">
+                    <i class="fas fa-envelope mr-2"></i>Get In Touch
+                </a>
+                <a href="#projects" class="px-8 py-4 border-2 border-cyan-500 rounded-full font-semibold hover:bg-cyan-500/10 transition-all">
+                    <i class="fas fa-code mr-2"></i>View Projects
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center gap-6 fade-in-up delay-500">
+                <a href="https://github.com/hamzalhdouchi" target="_blank" class="text-3xl text-gray-400 hover:text-cyan-400 transition-colors icon-float">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/Hamza-Lhadouchi" target="_blank" class="text-3xl text-gray-400 hover:text-cyan-400 transition-colors icon-float" style="animation-delay: 0.5s;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="tel:+212684553285" class="text-3xl text-gray-400 hover:text-cyan-400 transition-colors icon-float" style="animation-delay: 1s;">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:hamzalhadouchi@gmail.com" class="text-3xl text-gray-400 hover:text-cyan-400 transition-colors icon-float" style="animation-delay: 1.5s;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-cyan-400 text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl blur-xl opacity-30"></div>
+                        <div class="relative bg-black/50 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8">
+                            <h3 class="text-3xl font-bold text-cyan-400 mb-4">
+                                Passionate Developer
+                            </h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                                I'm a dedicated Full Stack Developer with a strong foundation in both front-end and back-end technologies. Currently pursuing my studies at YouCode (UM6P, SIMPLON) in Safi, I'm passionate about creating innovative digital solutions that make a real impact.
+                            </p>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                                With experience ranging from restaurant management platforms to vehicle rental systems, I bring a comprehensive approach to software development, combining technical expertise with creative problem-solving.
+                            </p>
+                            <div class="flex flex-wrap gap-3 mt-6">
+                                <span class="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>Casablanca, Morocco
+                                </span>
+                                <span class="px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-sm">
+                                    <i class="fas fa-briefcase mr-2"></i>Open to Opportunities
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-right">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="card-3d bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/30 rounded-xl p-6 hover-lift">
+                            <div class="text-5xl text-cyan-400 mb-3">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">10+</h4>
+                            <p class="text-gray-400">Projects Completed</p>
+                        </div>
+                        
+                        <div class="card-3d bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/30 rounded-xl p-6 hover-lift">
+                            <div class="text-5xl text-purple-400 mb-3">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">15+</h4>
+                            <p class="text-gray-400">Technologies</p>
+                        </div>
+                        
+                        <div class="card-3d bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/30 rounded-xl p-6 hover-lift">
+                            <div class="text-5xl text-cyan-400 mb-3">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">2+</h4>
+                            <p class="text-gray-400">Years Experience</p>
+                        </div>
+                        
+                        <div class="card-3d bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/30 rounded-xl p-6 hover-lift">
+                            <div class="text-5xl text-purple-400 mb-3">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">100%</h4>
+                            <p class="text-gray-400">Dedication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+    <!-- Skills Section -->
+    <section id="skills" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-100">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-cyan-400 mr-4">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Frontend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">React JS</span>
+                            <span class="text-cyan-400">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">JavaScript</span>
+                            <span class="text-cyan-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Tailwind CSS</span>
+                            <span class="text-cyan-400">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 95%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">HTML/CSS</span>
+                            <span class="text-cyan-400">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 95%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Bootstrap</span>
+                            <span class="text-cyan-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+                <!-- Backend -->
+                <div class="bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-200">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-purple-400 mr-4">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-400">Backend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">PHP</span>
+                            <span class="text-purple-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Laravel</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Node.js</span>
+                            <span class="text-purple-400">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 75%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">REST API</span>
+                            <span class="text-purple-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Java</span>
+                            <span class="text-purple-400">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Database & Cloud -->
+                <div class="bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-300">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-cyan-400 mr-4">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Database & Cloud</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">MySQL</span>
+                            <span class="text-cyan-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">PostgreSQL</span>
+                            <span class="text-cyan-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">AWS S3</span>
+                            <span class="text-cyan-400">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 70%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">AWS RDS</span>
+                            <span class="text-cyan-400">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 65%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">PHPMyAdmin</span>
+                            <span class="text-cyan-400">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & Tools -->
+                <div class="bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-400">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-purple-400 mr-4">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-400">Design & UX/UI</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Figma</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Adobe XD</span>
+                            <span class="text-purple-400">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 75%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">UI/UX Design</span>
+                            <span class="text-purple-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Responsive Design</span>
+                            <span class="text-purple-400">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dev Tools -->
+                <div class="bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-500">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-cyan-400 mr-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Dev Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Git & GitHub</span>
+                            <span class="text-cyan-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Docker</span>
+                            <span class="text-cyan-400">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 70%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">XAMPP/Laragon</span>
+                            <span class="text-cyan-400">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">VS Code</span>
+                            <span class="text-cyan-400">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Management -->
+                <div class="bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-600">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-purple-400 mr-4">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-400">Project Management</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Scrum</span>
+                            <span class="text-purple-400">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Jira</span>
+                            <span class="text-purple-400">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 75%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">Trello</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-300">GitHub Projects</span>
+                            <span class="text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Patterns -->
+            <div class="mt-12 text-center fade-in-up delay-700">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-6">Design Patterns & Architecture</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-white text-lg">
+                        OOP
+                    </span>
+                    <span class="px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-white text-lg">
+                        MVC
+                    </span>
+                    <span class="px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-white text-lg">
+                        DAO
+                    </span>
+                    <span class="px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-white text-lg">
+                        DTO
+                    </span>
+                    <span class="px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-white text-lg">
+                        RESTful API
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- ServeQuick Project -->
+                <div class="card-3d bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl overflow-hidden hover-lift fade-in-up delay-100">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 animate-pulse"></div>
+                        </div>
+                        <i class="fas fa-utensils text-8xl text-cyan-400 relative z-10"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-3">ServeQuick</h3>
+                        <p class="text-gray-400 mb-4">
+                            Digital platform for restaurant management, handling orders, payments, deliveries, and reservations to enhance customer experience and optimize internal operations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                React JS
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                PHP
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                PostgreSQL
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                REST API
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Tailwind
+                            </span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/hamzalhdouchi" target="_blank" class="flex-1 px-4 py-2 border border-cyan-500 rounded-lg text-center font-semibold hover:bg-cyan-500/10 transition-all">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Rental Project -->
+                <div class="card-3d bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl overflow-hidden hover-lift fade-in-up delay-200">
+                    <div class="h-48 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse"></div>
+                        </div>
+                        <i class="fas fa-car text-8xl text-purple-400 relative z-10"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-3">Vehicle Rental System</h3>
+                        <p class="text-gray-400 mb-4">
+                            Comprehensive rental platform where clients can browse vehicles, view details, make reservations, and leave reviews. Administrators manage bookings and vehicle inventory through a dedicated dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs">
+                                JavaScript
+                            </span>
+                            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs">
+                                PHP
+                            </span>
+                            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs">
+                                MySQL
+                            </span>
+                            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs">
+                                Tailwind
+                            </span>
+                            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs">
+                                HTML/CSS
+                            </span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/hamzalhdouchi" target="_blank" class="flex-1 px-4 py-2 border border-purple-500 rounded-lg text-center font-semibold hover:bg-purple-500/10 transition-all">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School Management Project -->
+                <div class="card-3d bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl overflow-hidden hover-lift fade-in-up delay-300">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 animate-pulse"></div>
+                        </div>
+                        <i class="fas fa-school text-8xl text-cyan-400 relative z-10"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-3">School Management Platform</h3>
+                        <p class="text-gray-400 mb-4">
+                            Integrated web platform for school management designed for Moroccan private institutions. Includes design, development, and security features for comprehensive educational administration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Laravel
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                PHP
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                MySQL
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Security
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                REST API
+                            </span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/hamzalhdouchi" target="_blank" class="flex-1 px-4 py-2 border border-cyan-500 rounded-lg text-center font-semibold hover:bg-cyan-500/10 transition-all">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Projects Card -->
+                <div class="card-3d bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl overflow-hidden hover-lift fade-in-up delay-400 flex items-center justify-center">
+                    <div class="p-8 text-center">
+                        <div class="text-8xl text-purple-400 mb-6">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-purple-400 mb-4">More Projects Coming Soon</h3>
+                        <p class="text-gray-400 mb-6">
+                            Working on exciting new projects. Check my GitHub for more!
+                        </p>
+                        <a href="https://github.com/hamzalhdouchi" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full font-semibold hover-lift btn-ripple">
+                            <i class="fab fa-github mr-2"></i>Visit GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">Professional Experience</h2>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
+                
+                <!-- Experience Item -->
+                <div class="relative pl-20 pb-16 fade-in-left">
+                    <div class="absolute left-4 top-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full border-4 border-black flex items-center justify-center pulse-animation">
+                        <i class="fas fa-briefcase text-white text-xs"></i>
+                    </div>
+                    
+                    <div class="card-3d bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-cyan-400 mb-2">Developer Intern</h3>
+                                <p class="text-xl text-purple-400 mb-1">AdLab Factory</p>
+                                <p class="text-gray-500 text-sm flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    2 Months
+                                </p>
+                            </div>
+                            <div class="text-cyan-400 text-3xl">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Contributed to the design, development, and security of an integrated web-based school management platform for Moroccan private institutions. Worked on implementing key features, ensuring data security, and optimizing user experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Web Development
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Security
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Platform Design
+                            </span>
+                            <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs">
+                                Laravel
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">Education</h2>
+            
+            <div class="space-y-8">
+                <!-- YouCode -->
+                <div class="card-3d bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-100">
+                    <div class="flex items-start">
+                        <div class="bg-cyan-500/20 p-4 rounded-xl mr-6">
+                            <i class="fas fa-laptop-code text-cyan-400 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-2">Full Stack Development Program</h3>
+                            <p class="text-xl text-purple-400 mb-1">YouCode (UM6P, SIMPLON)</p>
+                            <p class="text-gray-500 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Safi | 
+                                <i class="fas fa-calendar ml-2 mr-2"></i>2024 - 2026 (In Progress)
+                            </p>
+                            <p class="text-gray-300">
+                                Intensive program focused on modern web development, including front-end and back-end technologies, design patterns, and professional project management methodologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEUG Economics -->
+                <div class="card-3d bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-200">
+                    <div class="flex items-start">
+                        <div class="bg-purple-500/20 p-4 rounded-xl mr-6">
+                            <i class="fas fa-chart-line text-purple-400 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-purple-400 mb-2">DEUG in Economics</h3>
+                            <p class="text-xl text-cyan-400 mb-1">Cadi Ayyad University</p>
+                            <p class="text-gray-500 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Marrakech | 
+                                <i class="fas fa-calendar ml-2 mr-2"></i>2021 - 2023
+                            </p>
+                            <p class="text-gray-300">
+                                University diploma in Economics and Management, providing a strong foundation in analytical thinking and problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biological Sciences -->
+                <div class="card-3d bg-gradient-to-br from-cyan-500/5 to-black border border-cyan-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-300">
+                    <div class="flex items-start">
+                        <div class="bg-cyan-500/20 p-4 rounded-xl mr-6">
+                            <i class="fas fa-microscope text-cyan-400 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-2">Biological Sciences</h3>
+                            <p class="text-xl text-purple-400 mb-1">Faculty of Sciences Semlalia (FSSM)</p>
+                            <p class="text-gray-500 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Marrakech | 
+                                <i class="fas fa-calendar ml-2 mr-2"></i>2020 - 2021
+                            </p>
+                            <p class="text-gray-300">
+                                Foundation studies in biological sciences, developing analytical and research skills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baccalaureate -->
+                <div class="card-3d bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/30 rounded-2xl p-8 hover-lift fade-in-up delay-400">
+                    <div class="flex items-start">
+                        <div class="bg-purple-500/20 p-4 rounded-xl mr-6">
+                            <i class="fas fa-graduation-cap text-purple-400 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-purple-400 mb-2">Baccalaureate in Life and Earth Sciences (SVT)</h3>
+                            <p class="text-xl text-cyan-400 mb-1">Lycée Sidi Abdellah Ghiat</p>
+                            <p class="text-gray-500 text-sm mb-3 flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>2019 - 2020
+                            </p>
+                            <p class="text-gray-300">
+                                High school diploma with specialization in Life and Earth Sciences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen flex items-center justify-center py-20 section-reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-['Orbitron'] font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="fade-in-left">
+                    <h3 class="text-3xl font-bold text-cyan-400 mb-6">Let's Connect</h3>
+                    <p class="text-gray-300 text-lg mb-8">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <a href="mailto:hamzalhadouchi@gmail.com" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-all hover-lift group">
+                            <div class="bg-cyan-500/10 p-4 rounded-lg group-hover:bg-cyan-500/20 transition-all">
+                                <i class="fas fa-envelope text-cyan-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="text-lg">hamzalhadouchi@gmail.com</p>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+212684553285" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-all hover-lift group">
+                            <div class="bg-purple-500/10 p-4 rounded-lg group-hover:bg-purple-500/20 transition-all">
+                                <i class="fas fa-phone text-purple-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Phone</p>
+                                <p class="text-lg">+212 6 84 55 32 85</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/hamzalhdouchi" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-all hover-lift group">
+                            <div class="bg-cyan-500/10 p-4 rounded-lg group-hover:bg-cyan-500/20 transition-all">
+                                <i class="fab fa-github text-cyan-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">GitHub</p>
+                                <p class="text-lg">Hamza-Lhadouchi</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/Hamza-Lhadouchi" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-all hover-lift group">
+                            <div class="bg-purple-500/10 p-4 rounded-lg group-hover:bg-purple-500/20 transition-all">
+                                <i class="fab fa-linkedin text-purple-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">LinkedIn</p>
+                                <p class="text-lg">Hamza-Lhadouchi</p>
+                            </div>
+                        </a>
+                        
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="bg-cyan-500/10 p-4 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-cyan-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Location</p>
+                                <p class="text-lg">Casablanca, Morocco</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-in-right">
+                    <form class="space-y-6" id="contactForm">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2">Your Name</label>
+                            <input
+                                type="text"
+                                placeholder="John Doe"
+                                class="w-full px-4 py-3 rounded-lg bg-cyan-500/5 border border-cyan-500/30 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500 focus:bg-cyan-500/10 transition-all"
+                                required
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2">Your Email</label>
+                            <input
+                                type="email"
+                                placeholder="john@example.com"
+                                class="w-full px-4 py-3 rounded-lg bg-cyan-500/5 border border-cyan-500/30 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500 focus:bg-cyan-500/10 transition-all"
+                                required
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2">Subject</label>
+                            <input
+                                type="text"
+                                placeholder="Project Discussion"
+                                class="w-full px-4 py-3 rounded-lg bg-cyan-500/5 border border-cyan-500/30 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500 focus:bg-cyan-500/10 transition-all"
+                                required
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2">Message</label>
+                            <textarea
+                                placeholder="Tell me about your project..."
+                                class="w-full px-4 py-3 rounded-lg bg-cyan-500/5 border border-cyan-500/30 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500 focus:bg-cyan-500/10 transition-all min-h-40 resize-none"
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <button
+                            type="submit"
+                            class="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-bold rounded-lg transition-all hover-lift btn-ripple flex items-center justify-center gap-2 text-lg"
+                        >
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-500/30 py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    © 2024 Hamza Lhadouchi. All rights reserved.
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/hamzalhdouchi" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/Hamza-Lhadouchi" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:hamzalhadouchi@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Particle System
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 4 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 15;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Navigation Active State
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function setActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Section Reveal on Scroll
+        const revealSections = document.querySelectorAll('.section-reveal');
+
+        function checkScroll() {
+            revealSections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        checkScroll(); // Initial check
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const form = e.target;
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+            button.classList.add('bg-green-500', 'hover:bg-green-600');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                form.reset();
+            }, 3000);
+        });
+
+        // Cursor Trail Effect
+        let trails = [];
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) { // Only on desktop
+                const trail = document.createElement('div');
+                trail.classList.add('cursor-trail');
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                document.body.appendChild(trail);
+                
+                trails.push(trail);
+                
+                setTimeout(() => {
+                    trail.remove();
+                    trails = trails.filter(t => t !== trail);
+                }, 1000);
+            }
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            createParticles();
+            checkScroll();
+            setActiveLink();
+        });
+
+        // Parallax Effect for Hero Section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.getElementById('home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
 </body>
-
 </html>
-
-
